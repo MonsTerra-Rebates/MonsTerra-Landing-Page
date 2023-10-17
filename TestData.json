@@ -1,0 +1,73 @@
+[
+    {
+      "id": 1,
+      "name": "Ryan Zhu",
+      "age": 18,
+      "password": "12345",
+      "image": ""
+    },
+    {
+      "id": 2,
+      "name": "John Doe",
+      "age": 49,
+      "password": "asdf",
+      "image": ""
+    },
+    {
+      "id": 3,
+      "name": "Elon Musk",
+      "age": 39,
+      "password": "1234asdf",
+      "image": ""
+    },
+    {
+      "id": 4,
+      "name": "Ed Gang",
+      "age": 29,
+      "password": "9876",
+      "image": ""
+    },
+    {
+      "id": 5,
+      "name": "Albert Einstein",
+      "age": 69,
+      "password": "poiu",
+      "image": ""
+    },
+    {
+      "id": 6,
+      "name": "Alexa Sharp",
+      "age": 27,
+      "password": "qwerty",
+      "image": ""
+    },
+    {
+      "id": 7,
+      "name": "Zebra Master",
+      "age": 2,
+      "password": "789qwerty",
+      "image": ""
+    },
+    {
+      "id": 8,
+      "name": "Rand NameLol",
+      "age": 16,
+      "password": "password",
+      "image": ""
+    },
+    {
+      "id": 9,
+      "name": "ImRunning OutOfNames",
+      "age": 12,
+      "password": "f1234",
+      "image": ""
+    },
+    {
+      "id": 10,
+      "name": "First Last",
+      "age": 20,
+      "password": "987654321",
+      "image": ""
+    }
+    
+  ]
