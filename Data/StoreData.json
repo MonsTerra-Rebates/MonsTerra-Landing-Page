@@ -1,0 +1,43 @@
+[
+    {
+      "id": 1,
+      "name": "CeraVe Face Cleanser 500mL",
+      "price": 25,
+      "offered_rebate": ".1",
+      "greenscore": 20, 
+      "image": ""
+    },
+    {
+      "id": 2,
+      "name": "St Ives Face Scrub",
+      "price": 14,
+      "offered_rebate": "0",
+      "greenscore": 5, 
+      "image": ""
+    },
+    {
+      "id": 3,
+      "name": "Scotties Tissues",
+      "price": 9,
+      "offered_rebate": ".05",
+      "greenscore": 10, 
+      "image": ""
+    },
+    {
+      "id": 4,
+      "name": "Saje Bar Soap",
+      "price": 12,
+      "offered_rebate": ".2",
+      "greenscore": 40, 
+      "image": ""
+    },
+    {
+      "id": 5,
+      "name": "Recycled Paper",
+      "price": 20,
+      "offered_rebate": ".3",
+      "greenscore": 70, 
+      "image": ""
+    }
+    
+  ]
