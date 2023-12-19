@@ -1,12 +1,30 @@
 import { useState } from 'react'
 import './App.css'
+import {createBrowserRouter, createRoutesFromElements, Route, RouterProvider} from 'react-router-dom'
+import { ChakraProvider } from '@chakra-ui/react'
 
-function App() {
+
+import RootLayout from './layouts/RootLayout'
+import HomePage from './Pages/HomePage'
+import Register from './Pages/Register'
+import Contact from './Pages/ContactUs'
+
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path = "/" element = {<RootLayout/>}>
+      <Route index element = {<HomePage/>}/>
+      <Route path = "ContactUs" element = {<Contact/>} />
+      <Route path = "Register" element = {<Register/>}/>
+    </Route>
+  )
+)
+
+const App = () => {
   return (
-    <div>
-      <h1>The Goat</h1>
-      <h2>Rayhaan Farooq</h2>
-    </div>
+    <ChakraProvider>
+      <RouterProvider router = {router}/>
+    </ChakraProvider>
   )
 }
 
