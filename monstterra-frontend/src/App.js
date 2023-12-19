@@ -1,14 +1,14 @@
 import { useState } from 'react'
 import './App.css'
 import {createBrowserRouter, createRoutesFromElements, Route, RouterProvider} from 'react-router-dom'
-import { ChakraProvider } from '@chakra-ui/react'
+
 
 
 import RootLayout from './layouts/RootLayout'
 import HomePage from './Pages/HomePage'
 import Register from './Pages/Register'
 import Contact from './Pages/ContactUs'
-
+import NavigationBar from './components/NavigationBar'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -22,9 +22,12 @@ const router = createBrowserRouter(
 
 const App = () => {
   return (
-    <ChakraProvider>
+    <>
+      <NavigationBar/>
+      <div>
       <RouterProvider router = {router}/>
-    </ChakraProvider>
+      </div>
+    </>
   )
 }
 
