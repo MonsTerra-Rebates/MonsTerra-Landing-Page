@@ -8,8 +8,12 @@
     flex-direction: row;
     padding-top:20px;
     padding-bottom:20px;
-    background-color: rgb(178, 230, 173);
+    background-color: #CCDED7;
     padding-left:50px;
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
 }
 .logo-container{
     flex: 2;

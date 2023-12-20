@@ -1,10 +1,12 @@
 import React from 'react'
 import NavigationBar from '../components/NavigationBar'
+import './HomePageCss.css'
+
 const HomePage = () =>{
     return(
         <>
         <NavigationBar/>
-        <div> HomePage </div>
+        <div className='homepage-container'> HomePage </div>
         </>
     )
 }

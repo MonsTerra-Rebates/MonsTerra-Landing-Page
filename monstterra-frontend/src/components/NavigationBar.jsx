@@ -1,11 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
 import { Show, Hide, Divider, Center} from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 import './NavigationBarCss.css' 
 import Drawer0 from "./Drawer";
 import Logo from '../assets/MonsTerraWireframeLogo.png'
 
+
 const NavigationBar = () =>{
+    const [scrollDistance, setScrollDistance] = useState(0);
+
+  const handleScroll = () => {
+    const scrolled = window.scrollY;
+    setScrollDistance(scrolled);
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+        window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
     return (
         <div className="navbar-container">
             
