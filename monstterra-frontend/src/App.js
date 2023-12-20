@@ -1,6 +1,6 @@
-import { useState } from 'react'
+import React from 'react'
 import './App.css'
-import {createBrowserRouter, createRoutesFromElements, Route, RouterProvider} from 'react-router-dom'
+import {createBrowserRouter, createRoutesFromElements, Route, RouterProvider, Link} from 'react-router-dom'
 
 
 
@@ -23,7 +23,6 @@ const router = createBrowserRouter(
 const App = () => {
   return (
     <>
-      <NavigationBar/>
       <div>
       <RouterProvider router = {router}/>
       </div>

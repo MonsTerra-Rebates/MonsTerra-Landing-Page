@@ -1,26 +1,42 @@
 import React from "react";
-import { Show, Hide } from '@chakra-ui/react'
-import {HamburgerIcon} from '@chakra-ui/icons'
+import { Show, Hide, Divider, Center} from '@chakra-ui/react'
+import { Link } from 'react-router-dom'
 import './NavigationBarCss.css' 
+import Drawer0 from "./Drawer";
 const NavigationBar = () =>{
     return (
         <div className="navbar-container">
             
             <div className="logo-container">Logo</div>
-
+          
             <Hide breakpoint='(max-width: 600px)'>
             <div className="redirects-contianer">
-            <div>Redirect 1</div>
-            <div>Redirect 2</div>
-            <div>Redirect 3</div>
+
+                <div className="header-redirect">
+                    
+                    <Link to={'/'}>Home</Link>
+                    
+                </div>
+                <div className="header-redirect">
+                    
+                    <Link to={'/ContactUs'}>Contact Us!</Link>
+                    
+                </div>
+                <div className="header-redirect">
+                    
+                    <Link to={'/Register'}>Register</Link>
+                    
+                </div>
+                
             </div>
             </Hide>
 
             <Show breakpoint='(max-width: 600px)'>
-                <div>
-                    <HamburgerIcon boxSize={30}/>
+                <div className="hamburger-container">
+                    <Drawer0/>
                 </div>
             </Show >
+
         </div>
     )
 }
