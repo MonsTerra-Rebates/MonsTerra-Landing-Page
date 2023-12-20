@@ -3,13 +3,17 @@ import { Show, Hide, Divider, Center} from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 import './NavigationBarCss.css' 
 import Drawer0 from "./Drawer";
+import Logo from '../assets/MonsTerraWireframeLogo.png'
+
 const NavigationBar = () =>{
     return (
         <div className="navbar-container">
             
-            <div className="logo-container">Logo</div>
+            <div className="logo-container">
+                <img src={Logo} alt="Logo" />
+            </div>
           
-            <Hide breakpoint='(max-width: 600px)'>
+            <Hide breakpoint='(max-width: 700px)'>
             <div className="redirects-contianer">
 
                 <div className="header-redirect">
@@ -31,7 +35,7 @@ const NavigationBar = () =>{
             </div>
             </Hide>
 
-            <Show breakpoint='(max-width: 600px)'>
+            <Show breakpoint='(max-width: 700px)'>
                 <div className="hamburger-container">
                     <Drawer0/>
                 </div>
