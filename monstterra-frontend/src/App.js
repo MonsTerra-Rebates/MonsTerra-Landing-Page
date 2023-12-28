@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import './App.css'
 import {createBrowserRouter, createRoutesFromElements, Route, RouterProvider, Link} from 'react-router-dom'
 
@@ -8,7 +8,6 @@ import RootLayout from './layouts/RootLayout'
 import HomePage from './Pages/HomePage'
 import Register from './Pages/Register'
 import Contact from './Pages/ContactUs'
-import NavigationBar from './components/NavigationBar'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -21,6 +20,7 @@ const router = createBrowserRouter(
 )
 
 const App = () => {
+  
   return (
     <>
       <div>

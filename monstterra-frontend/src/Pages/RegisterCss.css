@@ -1,0 +1,126 @@
+.register-page-container{
+    background-color: #214857;
+    height: 2500px;
+    padding-top:95px;
+}
+
+.register-title-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10vw;
+}
+
+.register-title{
+    color: #CAFFB7;
+    font-size: 4.5vw;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    width:40vw;
+    text-align: center;
+}
+
+.register-description-conatiner{
+    display: flex;
+    
+    padding-top:85px;
+    padding-left: 12vw;
+}
+
+.register-description{
+    font-size: 1.75vw;
+    
+    color: whitesmoke;
+    width: 76vw;
+    line-height: 200%;
+    padding-bottom: 100px
+}
+
+.first-last-container{
+    display: flex;
+    padding-left: 12vw;
+    width: 76vw;
+    justify-content: space-between;
+
+}
+.first-container, .last-container,.email-first-container,.phone-number-container{
+    width: 23.8375vw;
+    color:#CAFFB7;
+    font-size: 1.75vw;
+    font-weight: bold;
+    
+}
+.email-container, .phone-container{
+    padding-top: 80px;
+    padding-left: 12vw;
+    
+}
+.star{
+    color: #FFB7B7;
+    font-weight: 500;
+}
+.first-input-container,.last-input-container{
+    padding-top:30px;
+}
+.email-first-container{
+    width: 41.67vw;
+    
+}
+.email-first-input-container{
+    padding-top:30px;
+}
+
+.confirm-container-false{
+    
+    transform: translateY(50px);
+    transition: all ease-in-out 0.5s;
+    opacity: 0;
+}
+.confirm-container-true{
+    
+    transform: 0;
+    opacity: 1;
+    transition: all ease-in-out 0.5s;
+}
+.email-confirm-input-container{
+    padding-top: 30px;
+    width: 41.67vw;
+}
+.phone-input-container{
+    width:30vw;
+    padding-top: 30px;
+}
+
+.check-ui-container{
+    height:1vw;
+}
+.check-tos-container{
+    padding-left: 12vw;
+    font-weight: medium;
+}
+
+.finish-registration-container{
+    display: flex;
+    justify-content: center;
+    padding-top: 5vw
+}
+.error-list-container{
+    padding-left:16vw;
+    padding-top:3vw;
+    color: #FFB7B7;
+    font-weight: 500;
+    letter-spacing: 2px;
+    font-family: Inter;
+}
+.error-text{
+    padding-top: 8px;
+}
+.invalid-text-false{
+    color: #FFB7B7;
+    font-weight: 500;
+    font-size: 1vw;
+    
+}
+.invalid-text-true{
+    display: none;
+}

@@ -1,4 +1,58 @@
 .homepage-container{
     background-color: #214857;
-    height:5000px;
+    height: 2500px;
+    padding-top:95px;
 }
+.title{
+    color: #CAFFB7;
+    font-size: 5vw;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    width: 45vw;
+    padding-left: 12vw;
+    padding-top: 5vw;
+    padding-bottom:10px;
+}
+.title-description{
+    font-size: 1.75vw;
+    
+    color: whitesmoke;
+    padding-left: 12vw;
+    width: 80vw;
+    line-height: 200%;
+    padding-bottom: 100px
+}
+
+.join-title,.meet-title,.contact-title{
+    color: #CAFFB7;
+    padding-left: 12vw;
+    font-size: 2vw;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+}
+.meet-title{
+    display: flex;
+    justify-content: center;
+    padding:0;
+    padding-top:150px;
+}
+.join-text,.contact-text{
+    font-size: 1.75vw;
+    color: whitesmoke;
+    padding-left: 12vw;
+    width: 80vw;
+    line-height: 200%;
+    padding-bottom: 80px
+}
+.join-button{
+    display: flex;
+    justify-content: center;
+    
+}
+.contact-text{
+    padding-bottom: 0;
+}
+.contact-container{
+    padding-top: 80px; 
+}
+
