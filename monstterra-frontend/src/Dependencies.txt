@@ -8,4 +8,12 @@ React Router Dom
 
 npm install react-router-dom
 
+--------------------------------------------------------------------------------
+Mongo DB
 
+npm install mongodb
+
+-----------------------------------------------------------------------------------
+Axios
+
+npm install axios

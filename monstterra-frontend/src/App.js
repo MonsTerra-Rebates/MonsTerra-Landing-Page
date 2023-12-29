@@ -8,6 +8,7 @@ import RootLayout from './layouts/RootLayout'
 import HomePage from './Pages/HomePage'
 import Register from './Pages/Register'
 import Contact from './Pages/ContactUs'
+import Confirm from './Pages/Confirm';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -15,6 +16,7 @@ const router = createBrowserRouter(
       <Route index element = {<HomePage/>}/>
       <Route path = "ContactUs" element = {<Contact/>} />
       <Route path = "Register" element = {<Register/>}/>
+      <Route path = "Register/Confirm" element = {<Confirm/>}/>
     </Route>
   )
 )
