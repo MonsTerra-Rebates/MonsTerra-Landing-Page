@@ -1,0 +1,11 @@
+express
+cors
+body-parser
+
+npm install express cors body-parser
+
+
+dotenv
+mongoose
+
+npm install dotenv mongoose

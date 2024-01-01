@@ -4,7 +4,7 @@ const Confirm = () =>{
     return(
         <>
         <NavigationBar/>
-        <div> CONFIRMED </div>
+        <div> </div>
         </>
     )
 }

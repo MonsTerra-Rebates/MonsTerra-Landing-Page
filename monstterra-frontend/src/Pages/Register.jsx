@@ -1,6 +1,8 @@
 import React, { useState, useEffect} from 'react';
 import NavigationBar from '../components/NavigationBar'
 import './RegisterCss.css';
+import axios from "axios"
+
 import { Input, 
         Flex,
         ChakraProvider,
@@ -13,9 +15,10 @@ import { Input,
     } from '@chakra-ui/react'
 
 
-
 const Register = () =>{
-
+    const autoCorrectName = (name) =>{
+        return name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
+    }
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastname] = useState('');
     const [isChecked, setIsChecked] = useState(false);
@@ -24,6 +27,37 @@ const Register = () =>{
     const [errlist, setErrList] = useState(["*  email address does not match","*  fill out all mandatory fields","*  fill out all mandatory fields"]);
     const [valid, setValid] = useState(false);
     const [autofill, setAutoFill] = useState('');
+    const [phone, setPhone] = useState('')
+    const [validPhone, setValidPhone] = useState(false)
+    const [errors, setErrors] = useState('')
+    const [submitted, setSubmitted] = useState(false)
+    //===========================================================
+
+    const axiosPostData = async() =>{
+        console.log(`${firstName}|${lastName}|${email}|${phone}`)
+        const postData ={
+            name: `${autoCorrectName(firstName)} ${autoCorrectName(lastName)}`,
+            email: email,
+            phone: phone,
+        }
+        setSubmitted(true);
+        await axios.post('http://localhost:4000/register', postData)
+        .then(res => setErrors(res.data))
+    }
+
+    const handleSubmit = (event) =>{
+        
+        event.preventDefault()
+   
+
+        setErrors('')
+        axiosPostData()
+    }
+
+
+    
+    //===========================================================
+    
     const handleCheckboxChange = () => {        
         setIsChecked(prevState => !prevState); // Toggle the checkbox value safely
       };
@@ -43,19 +77,18 @@ const Register = () =>{
     };
     
     function formatPhoneNumber(phoneNumber) {
-        // Remove non-digit characters from the input
-        const cleaned = phoneNumber.replace(/\D/g, '');
-      
-        // Split the phone number into groups according to the format (123)-456-789
-        const match = cleaned.match(/^(\d{3})(\d{0,3})(\d{0,3})$/);
-      
-        if (match) {
-          // Format the phone number using captured groups
-          const formattedNumber = `(${match[1]})-${match[2]}-${match[3]}`;
-          return formattedNumber.replace(/-+$/, ''); // Remove trailing hyphens
+        const noalpha = phoneNumber.replace(/\D/g, '')
+
+        if (noalpha.length === 10){
+            const phoneNum = `(${noalpha.substring(0,3)})-${noalpha.substring(3,6)}-${noalpha.substring(6)}`
+            setPhone(phoneNum.replace(/[\(\)\-]/g, ''))
+            setValidPhone(true)
+            return phoneNum
         }
-        return phoneNumber.split(')').join('');
-      }
+        setValidPhone(false)
+        setPhone('')
+        return noalpha
+    }
     function isValidEmail(email) {
         // Regular expression pattern for validating email addresses
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -88,8 +121,11 @@ const Register = () =>{
           if (!isChecked) {
             newErrorList.push("*  Please agree to the Terms Of Service");
           }
+          if (!!autofill && !validPhone){
+            newErrorList.push("*  Please enter a valid phone number or none at all")
+          }
         setErrList(newErrorList);
-    }, [firstName,lastName,email,confirm,isChecked])
+    }, [firstName,lastName,email,confirm,isChecked,autofill,phone])
 
     const theme = extendTheme({
         components: {
@@ -184,10 +220,14 @@ const Register = () =>{
             </div>
             <div className='finish-registration-container'>
                 <Link href='Register/Confirm'>
-                    <Button colorScheme='teal' width={`${700/1920*100}vw`} height={`${50/1920*100}vw`} fontWeight={'200'} fontSize={'1.25vw'} isDisabled={errlist.length !== 0}>Finish Registration</Button>
+                    <Button colorScheme='teal' width={`${700/1920*100}vw`} height={`${50/1920*100}vw`} fontWeight={'200'} fontSize={'1.25vw'} isDisabled={errlist.length !== 0 || submitted} onClick={handleSubmit}>Finish Registration</Button>
+                  
                 </Link>
             </div>
-
+            
+            <div className='success'>
+                {errors}
+            </div>
             
         </div>
         </>

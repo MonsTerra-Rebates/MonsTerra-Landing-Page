@@ -124,3 +124,12 @@
 .invalid-text-true{
     display: none;
 }
+
+.success{
+    padding-top:5vw;
+    display: flex;
+    justify-content: center;
+    color:#CAFFB7;
+    font-weight: 400;
+    font-size: 1.25vw;
+}
