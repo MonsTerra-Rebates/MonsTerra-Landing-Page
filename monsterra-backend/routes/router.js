@@ -18,24 +18,7 @@ router.post('/register', async(req,res) =>{
 })
 
 router.get('/users', (req, res) =>{
-    const userData = [
-        
-        {
-            'id': 1,
-            'firstName': "Ryan",
-            'lastName': "Zhu",
-            'age': '18',
-            'email': 'ryanzhuturtle@gmail.com',
-        },
-        {
-            'id': 1,
-            'firstName': "John",
-            'lastName': "Doe",
-            'age': '22',
-            'email': 'exampleemail1@gmail.com',
-        }
-        
-    ]
+    const userData = []
 
     res.send(userData) 
 })
