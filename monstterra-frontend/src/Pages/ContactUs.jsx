@@ -1,7 +1,25 @@
-import React from 'react'
+import React, { useState, useEffect} from 'react';
 import NavigationBar from '../components/NavigationBar'
 import './ContactUsCss.css'
+import { Input , Button} from '@chakra-ui/react'
+
+
 const Contact = () =>{
+
+    const [email, setEmail] = useState('')
+    const [name, setName] = useState('')
+    const [message, setMessage] = useState('')
+
+    const handleName = (event) => {
+        setName(event.target.value);
+    };
+    const handleEmail = (event) => {
+        setEmail(event.target.value);
+    };
+    const handleMessage = (event) => {
+        setMessage(event.target.value);
+    };
+
     return(
         <>
         <NavigationBar/>
@@ -38,6 +56,29 @@ const Contact = () =>{
                         <div className='module-link'>www.instagram.com/MonsTerra</div>
                     </div>
                 </div>
+            </div>
+
+            <div className='contact-interface-container'>
+                <div className='contact-interface-title'>Have an Urgent Question?</div>
+                <div className='contact-interface-subtitle'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</div>
+                <div className='contact-inputs-container'>
+                <div className='contact-name-container'>
+                    <div className='contact-yourname'>Your Name:</div>
+                    <Input variant='outline' placeholder='Full Name' background={'#DBFFF2'} color={'#0D3241'} height={`${60/1920*100}vw`} width = {'40vw'}borderRadius={'full'} paddingLeft={'25px'} onChange={handleName} focusBorderColor='lightgreen' fontSize={'1vw'}/>
+                </div>
+                <div className='contact-email-container'>
+                    <div className='contact-youremail'>Your Email:</div>
+                    <Input variant='outline' placeholder='Email Adress' background={'#DBFFF2'} color={'#0D3241'} height={`${60/1920*100}vw`} width = {'40vw'}borderRadius={'full'} paddingLeft={'25px'} onChange={handleEmail} focusBorderColor='lightgreen' fontSize={'1vw'}/>
+                </div>
+                <div className='contact-message-container'>
+                    <div className='contact-message'>Message:</div>
+                    <Input variant='outline' placeholder='Message' background={'#DBFFF2'} color={'#0D3241'} height={`${256/1920*100}vw`} width = {'40vw'}borderRadius={'2vw'} paddingLeft={'25px'} onChange={handleMessage} focusBorderColor='lightgreen' fontSize={'1vw'}/>
+                </div>
+                
+                </div>
+            </div>
+            <div className='send-button-container'>
+            <Button colorScheme='teal' width={`${700/1920*100}vw`} height={`${50/1920*100}vw`} fontWeight={'200'} fontSize={'1.25vw'} >Send Message</Button>
             </div>
         </div>
         </>
