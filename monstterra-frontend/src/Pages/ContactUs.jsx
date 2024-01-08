@@ -9,8 +9,8 @@ const Contact = () =>{
             <div className='contact-title-container'>
                 Get In Touch
             </div>
-            <div className='contact-top-contianer'>
-                <div className='contact-top-contacts-contianer'>
+            <div className='contact-top-container'>
+                <div className='contact-top-contacts-container'>
                     Contacts
                     <div className='contact-module-container'>
                         
@@ -24,7 +24,7 @@ const Contact = () =>{
                         <div className='module-link'>111-111-1111</div>
                     </div>
                 </div>
-                <div className='contact-top-socials-contianer'>
+                <div className='contact-top-socials-container'>
                     Socials
                     <div className='contact-module-container'>
                         <div className='module-title'>LinkedIn</div>

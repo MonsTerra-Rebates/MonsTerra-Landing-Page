@@ -3,3 +3,22 @@
     background-color: #214857;
     height: 2500px;
 }
+.contact-title-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 8vw;
+    padding-bottom:8vw;
+    color: #CAFFB7;
+    font-size: 4.5vw;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+
+}
+.contact-top-container{
+    background-color: #6589A9;
+    display: flex;
+}
+.contact-top-contacts-container,.contact-top-socials-container{
+    flex:1;
+}
