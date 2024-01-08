@@ -9,36 +9,40 @@ router.post('/register', async(req,res) =>{
 
     console.log(`user: ${newUser}`)
 
-    const saveUser = await newUser.save()
-
-    if (saveUser){
-        res.send('User registration successful. Thank you')
+    try {
+        const userEmails = await schemas.Users.find({}, 'email'); // Only fetch 'email' field
+        const emails = userEmails.map(user => user.email);
+        if (emails.includes(email)){
+            res.send('This email already exists.')
+        }
+        else{
+    
+            const saveUser = await newUser.save()
+    
+            if (saveUser){
+                res.send('User registration successful. Thank you')
+            }
+        }
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Internal Server Error');
     }
+
+   
     
 })
 
-router.get('/users', (req, res) =>{
-    const userData = [
-        
-        {
-            'id': 1,
-            'firstName': "Ryan",
-            'lastName': "Zhu",
-            'age': '18',
-            'email': 'ryanzhuturtle@gmail.com',
-        },
-        {
-            'id': 1,
-            'firstName': "John",
-            'lastName': "Doe",
-            'age': '22',
-            'email': 'exampleemail1@gmail.com',
-        }
-        
-    ]
+router.get('/emails', async (req, res) => {
+    try {
+        const userEmails = await schemas.Users.find({}, 'email'); // Only fetch 'email' field
 
-    res.send(userData) 
-})
+        const emails = userEmails.map(user => user.email);
+        res.send(emails);
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Internal Server Error');
+    }
+});
 
 
 module.exports = router
