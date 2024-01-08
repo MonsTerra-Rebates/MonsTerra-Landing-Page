@@ -11,7 +11,8 @@ const Contact = () =>{
             </div>
             <div className='contact-top-container'>
                 <div className='contact-top-contacts-container'>
-                    Contacts
+                    <div className='contacts-text'>Contacts</div>
+                    
                     <div className='contact-module-container'>
                         
                         <div className='module-title'>Email</div>
@@ -25,7 +26,7 @@ const Contact = () =>{
                     </div>
                 </div>
                 <div className='contact-top-socials-container'>
-                    Socials
+                    <div className='socials-text'>Socials</div>
                     <div className='contact-module-container'>
                         <div className='module-title'>LinkedIn</div>
                         <div className='module-subtitle'>Find us on Linkedin</div>

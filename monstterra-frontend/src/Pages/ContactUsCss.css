@@ -13,12 +13,52 @@
     font-size: 4.5vw;
     font-family: 'Inter', sans-serif;
     font-weight: bold;
-
 }
 .contact-top-container{
     background-color: #6589A9;
     display: flex;
+    padding-left:15vw;
+    padding-top:4vw;
+    padding-bottom:4vw;
 }
 .contact-top-contacts-container,.contact-top-socials-container{
     flex:1;
+    display: flex;
+    flex-direction: column;
+}
+.contact-top-socials-container{
+    float: right;
+
+}
+
+.contacts-text,.socials-text{
+    color: whitesmoke;
+    font-size: 2vw;
+    font-weight: 700;
+}
+
+/* -----------------module styles-------------------*/
+.contact-module-container{
+    padding-top:2vw;
+}
+.module-title{
+    color: whitesmoke;
+    padding-top:0.3vw;
+    padding-bottom:0.3vw;
+    font-size: 1.5vw;
+    font-weight: 500;
+}
+.module-subtitle{
+    color: whitesmoke;
+    padding-top:0.3vw;
+    padding-bottom:0.3vw;
+    font-size: 1vw;
+    font-weight: 700;
+}
+.module-link{
+    color: #CAFFB7;
+    font-size: 1.2vw;
+    padding-top:0.3vw;
+    padding-bottom:0.3vw;
+    font-weight: 400;
 }
