@@ -2,6 +2,7 @@ import React, { useState, useEffect} from 'react';
 import NavigationBar from '../components/NavigationBar'
 import './RegisterCss.css';
 import axios from "axios"
+import emailjs from '@emailjs/browser'
 
 import { Input, 
         Flex,
@@ -45,13 +46,38 @@ const Register = () =>{
         .then(res => setErrors(res.data))
     }
 
+    const emailSend = async() => {
+        const FullName = `${autoCorrectName(firstName)} ${autoCorrectName(lastName)}`
+        const templateParams = {
+          to_email: email,
+          to_name: FullName,
+          message: 'Thank you for joining MonsTerra! We will email you nearing the launch date of our product! Stay tuned.'
+        };
+        await emailjs
+          .send(
+            'service_ep2ahka',
+            'template_uisp89h',
+            templateParams,
+            'sQsFNzDFB62Pqt7nc'
+          )
+          .then(
+            (response) => {
+                console.log('Email sent successfully:', response);
+            },
+            (error) => {
+                console.error('Email sending failed:', error);
+            }
+          );
+      };
+
     const handleSubmit = (event) =>{
         
         event.preventDefault()
-   
 
         setErrors('')
         axiosPostData()
+        emailSend()
+
     }
 
 
@@ -196,7 +222,7 @@ const Register = () =>{
                 <ChakraProvider theme={theme}>
                     <Flex backgroundColor="transparent">
                         <CheckboxGroup colorScheme="teal">
-                            <Checkbox color={'whitesmoke'} paddingTop={'50px'} paddingLeft={'10px'} spacing={'30px'} isChecked={isChecked} onChange={handleCheckboxChange}>
+                            <Checkbox color={'whitesmoke'} paddingTop={'50px'} paddingLeft={'10px'} spacing={'30px'} isChecked={isChecked} onChange={handleCheckboxChange} size={'sm'}>
                                 <span className='checkbox-text'>
                                 By checking this box, you agree to the {' '}
                                 <Link color='teal.200' href='Register/TOS' >

@@ -11,7 +11,7 @@ const Contact = () =>{
     const [message, setMessage] = useState('')
     const [success, setSuccess] = useState(false)
     const [error, setError] = useState(false)
-
+    const [disabled, setDisabled] = useState(false)
     const handleName = (event) => {
         setName(event.target.value);
     };
@@ -23,14 +23,14 @@ const Contact = () =>{
         console.log(message)
     };
     
-    const sendEmail = () => {
+    const sendEmail = async() => {
         const templateParams = {
           from_name: name,
           from_email: email,
           message: message,
         };
-    
-        emailjs
+        setDisabled(true)
+        await emailjs
           .send(
             'service_ep2ahka',
             'template_3hak0tp',
@@ -47,6 +47,7 @@ const Contact = () =>{
                 console.error('Email sending failed:', error);
             }
           );
+          setDisabled(false)
       };
       
     return(
@@ -123,7 +124,7 @@ const Contact = () =>{
                 </div>
             </div>
             <div className='send-button-container'>
-            <Button colorScheme='teal' width={`${700/1920*100}vw`} height={`${50/1920*100}vw`} fontWeight={'200'} fontSize={'1.25vw'} onClick = {sendEmail} isDisabled = {success}>Send Message</Button>
+            <Button colorScheme='teal' width={`${700/1920*100}vw`} height={`${50/1920*100}vw`} fontWeight={'200'} fontSize={'1.25vw'} onClick = {sendEmail} isDisabled = {success||disabled}>Send Message</Button>
             </div>
             <div className={`${error ? 'error' : 'not-error'}`}>
                 Message Sent Successfully. Thank you!

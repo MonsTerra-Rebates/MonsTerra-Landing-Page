@@ -59,7 +59,6 @@
 .member-text{
     font-size: 1.15vw;
     color: whitesmoke;
-   
     width: 50vw;
     line-height: 200%;
     padding-bottom: 5.208vw;
@@ -68,6 +67,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
   

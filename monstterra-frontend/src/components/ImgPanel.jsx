@@ -44,7 +44,7 @@ const ImgPanel = () =>{
             // Smoothly increase the value to 100
         timer = setTimeout(() => {
             setValue(prevValue => Math.min(prevValue + 1, 100));
-        }, bezier(value)); // Adjust timing for the smooth transition (in milliseconds)
+        }, bezier(value)+5); // Adjust timing for the smooth transition (in milliseconds)
         
         
         
@@ -97,9 +97,9 @@ const ImgPanel = () =>{
         </div>
 
         <div className="member-text-container">
-            <div className="member-text" style={{transform: `translateY(${((value-25)/1920) * 100}vw)`, opacity:`${value/100}`}}>
+            <div className="member-text" style={{ opacity:`${value/100}`, height:'20vw', paddingTop:'2vw'}}>
             <p >
-                {divText}{`TEST ${value}`}
+                {divText}
                 </p>
             </div>
         </div>
