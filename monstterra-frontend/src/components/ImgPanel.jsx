@@ -97,7 +97,7 @@ const ImgPanel = () =>{
         </div>
 
         <div className="member-text-container">
-            <div className="member-text" style={{transform: `translateY(${value-25}px)`, opacity:`${value/100}`}}>
+            <div className="member-text" style={{transform: `translateY(${((value-25)/1920) * 100}vw)`, opacity:`${value/100}`}}>
             <p >
                 {divText}{`TEST ${value}`}
                 </p>

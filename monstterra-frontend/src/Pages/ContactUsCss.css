@@ -1,7 +1,7 @@
 .contact-us-container{
     padding-top:95px;
     background-color: #214857;
-    height: 2500px;
+    padding-bottom: 10vw;
 }
 .contact-title-container{
     display: flex;
@@ -96,4 +96,26 @@
     justify-content: center;
     align-items: center;
     padding-top:8vw;
+}
+
+
+.not-success,.not-error{
+    display: none;
+}
+
+.success{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #CAFFB7;
+    font-size: 1.5vw;
+    font-weight: 600;
+}
+.error{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFB7B7;
+    font-size: 1.5vw;
+    font-weight: 600;
 }

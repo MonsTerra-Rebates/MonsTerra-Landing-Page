@@ -17,3 +17,7 @@ npm install mongodb
 Axios
 
 npm install axios
+
+EmailJS
+
+npm install @emailjs/browser --save

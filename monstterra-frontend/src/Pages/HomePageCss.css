@@ -1,6 +1,6 @@
 .homepage-container{
     background-color: #214857;
-    height: 2500px;
+
     padding-top:95px;
 }
 .title{
@@ -20,7 +20,7 @@
     padding-left: 12vw;
     width: 80vw;
     line-height: 200%;
-    padding-bottom: 100px
+    padding-bottom: 5.21vw;
 }
 
 .join-title,.meet-title,.contact-title{
@@ -34,7 +34,7 @@
     display: flex;
     justify-content: center;
     padding:0;
-    padding-top:150px;
+    padding-top:7.8125vw;
 }
 .join-text,.contact-text{
     font-size: 1.75vw;
@@ -42,7 +42,7 @@
     padding-left: 12vw;
     width: 80vw;
     line-height: 200%;
-    padding-bottom: 80px
+    padding-bottom: 4.167vw;
 }
 .join-button{
     display: flex;
@@ -53,6 +53,6 @@
     padding-bottom: 0;
 }
 .contact-container{
-    padding-top: 80px; 
+    padding-top: 4.167vw; 
 }
 

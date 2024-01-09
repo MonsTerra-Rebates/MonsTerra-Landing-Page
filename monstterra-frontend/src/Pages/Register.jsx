@@ -196,7 +196,7 @@ const Register = () =>{
                 <ChakraProvider theme={theme}>
                     <Flex backgroundColor="transparent">
                         <CheckboxGroup colorScheme="teal">
-                            <Checkbox color={'whitesmoke'} paddingTop={'50px'} paddingLeft={'10px'} size={'lg'} spacing={'30px'} isChecked={isChecked} onChange={handleCheckboxChange}>
+                            <Checkbox color={'whitesmoke'} paddingTop={'50px'} paddingLeft={'10px'} spacing={'30px'} isChecked={isChecked} onChange={handleCheckboxChange}>
                                 <span className='checkbox-text'>
                                 By checking this box, you agree to the {' '}
                                 <Link color='teal.200' href='Register/TOS' >
